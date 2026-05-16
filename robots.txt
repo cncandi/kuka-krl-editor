@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cncandi.github.io/kuka-krl-editor/sitemap.xml
