@@ -1,0 +1,32 @@
+# KUKA KRL Editor
+
+KUKA KRL Editor is a free browser-based editor for KUKA Robot Language (KRL), developed by CAD/CAM Systeme Datentechnik Reitz GmbH & Co. KG.
+
+Main product page: https://cnc-technik.de/kuka
+GitHub Pages landing page: https://cncandi.github.io/kuka-krl-editor/
+Repository: https://github.com/cncandi/kuka-krl-editor
+Community library: https://cnc-technik.de/robsimul/roblib/?tab=krl
+
+## What it does
+
+- Edit KUKA .src and .dat files
+- Syntax highlighting for KUKA Robot Language
+- Code completion for KRL keywords, variables and functions
+- Go to Definition for declarations across open files
+- WorkVisual .wvs and .wvps support
+- Robot archive .zip support
+- KRL tools such as array assistant, position mirroring, data list sorting and program splitting
+
+## Important keywords
+
+KUKA KRL Editor, KUKA Robot Language Editor, KRL Editor, KRL Syntax Highlighting, KUKA Programmierung, SRC DAT Dateien bearbeiten, KUKA Editor kostenlos, KUKA Editor freeware, KUKA Roboterprogrammierung, Robot Programming Editor
+
+## Company
+
+CAD/CAM Systeme Datentechnik Reitz GmbH & Co. KG
+Breidenstein bei Marburg, Germany
+Website: https://cnc-technik.de
+
+## Intended audience
+
+Robot programmers, KUKA integrators, CNC and automation companies, technical schools, students and engineers working with KUKA industrial robots.
