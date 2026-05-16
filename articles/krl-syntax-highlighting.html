@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KRL Syntax Highlighting — KUKA Robot Language Code Coloring</title>
+<meta name="description" content="How KRL syntax highlighting works, what it covers, and why it reduces programming errors in KUKA robot programs.">
+<meta name="keywords" content="KRL syntax highlighting, KUKA Robot Language coloring, KRL code editor, KUKA KRL programming, syntax coloring robot">
+<link rel="stylesheet" href="article-base.css">
+</head>
+<body>
+<nav><span class="nav-logo">🤖 KRL Editor</span><a href="../">← Back</a><a href="https://cnc-technik.de/kuka" class="btn-cta">▶ Open Editor</a></nav>
+<article>
+<div class="meta">📅 2025 · CAD/CAM Systeme Datentechnik Reitz · 4 min read</div>
+<h1>KRL <span>Syntax Highlighting</span> — A Complete Guide</h1>
+
+<p>Syntax highlighting transforms plain KRL code into a visually organized, color-coded representation that makes programs easier to read, debug, and maintain. Here is everything you need to know about KRL syntax highlighting.</p>
+
+<h2>What KRL Syntax Highlighting Covers</h2>
+
+<h3>Motion Commands</h3>
+<p>The core of any KRL program — motion commands are typically highlighted in blue:</p>
+<pre style="color:#569CD6">PTP  LIN  CIRC  SLIN  SPTP  SCIRC</pre>
+
+<h3>Control Structures</h3>
+<p>Program flow keywords stand out clearly:</p>
+<pre>
+<span style="color:#C586C0">IF</span> bCondition <span style="color:#C586C0">THEN</span>
+   <span style="color:#569CD6">PTP</span> P1
+<span style="color:#C586C0">ELSE</span>
+   <span style="color:#569CD6">PTP</span> P2
+<span style="color:#C586C0">ENDIF</span>
+
+<span style="color:#C586C0">FOR</span> i = <span style="color:#B5CEA8">1</span> <span style="color:#C586C0">TO</span> <span style="color:#B5CEA8">10</span>
+   rArray[i] = <span style="color:#B5CEA8">0.0</span>
+<span style="color:#C586C0">ENDFOR</span>
+</pre>
+
+<h3>Data Types and Declarations</h3>
+<p>Type keywords are colored differently from variable names:</p>
+<pre>
+<span style="color:#569CD6">DECL</span> <span style="color:#4EC9B0">E6POS</span> <span style="color:#9CDCFE">pHome</span>
+<span style="color:#569CD6">DECL</span> <span style="color:#4EC9B0">REAL</span>  <span style="color:#9CDCFE">rSpeed</span> = <span style="color:#B5CEA8">0.5</span>
+<span style="color:#569CD6">DECL</span> <span style="color:#4EC9B0">BOOL</span>  <span style="color:#9CDCFE">bReady</span> = <span style="color:#569CD6">FALSE</span>
+</pre>
+
+<h3>System Variables</h3>
+<p>KUKA system variables starting with <code>$</code> are specially highlighted:</p>
+<pre>
+<span style="color:#D7BA7D">$TOOL</span>    = TOOL_DATA[<span style="color:#B5CEA8">1</span>]
+<span style="color:#D7BA7D">$BASE</span>    = BASE_DATA[<span style="color:#B5CEA8">1</span>]
+<span style="color:#D7BA7D">$VEL.CP</span> = <span style="color:#B5CEA8">0.3</span>
+<span style="color:#D7BA7D">$OUT</span>[<span style="color:#B5CEA8">1</span>] = <span style="color:#569CD6">TRUE</span>
+</pre>
+
+<h3>FOLD Blocks</h3>
+<p>FOLD/ENDFOLD blocks collapse inline forms and can be shown collapsed or expanded:</p>
+<pre>
+<span style="color:#808080">;FOLD PTP HOME Vel=100% PDAT1 Tool[1] Base[0]</span>
+   PTP XPHOME
+<span style="color:#808080">;ENDFOLD</span>
+</pre>
+
+<h2>Why Syntax Highlighting Reduces Errors</h2>
+<ul>
+  <li><strong>Typos in keywords</strong> are immediately visible (wrong color)</li>
+  <li><strong>Missing ENDIF/ENDFOR</strong> — structural imbalance is visually obvious</li>
+  <li><strong>Wrong variable types</strong> — color differences help spot type mismatches</li>
+  <li><strong>Comments vs code</strong> — clearly separated</li>
+</ul>
+
+<h2>KRL Highlighting in the Free Editor</h2>
+<p>The <a href="https://cnc-technik.de/kuka">free KRL Editor</a> provides Monaco-based syntax highlighting (same engine as Visual Studio Code) with a custom KRL grammar covering:</p>
+<ul>
+  <li>200+ KRL keywords and built-in functions</li>
+  <li>All data types (E6POS, FRAME, E6AXIS, TOOL_DATA, BASE_DATA, etc.)</li>
+  <li>System variables ($TOOL, $BASE, $VEL, $ACC, $OUT, $IN, ...)</li>
+  <li>FOLD/ENDFOLD blocks with fold/unfold support</li>
+  <li>Inline forms (PTP/LIN/CIRC parameters)</li>
+</ul>
+
+<div class="cta-box">
+  <h3>See KRL Syntax Highlighting in Action</h3>
+  <p>Free browser-based KRL editor with full syntax highlighting</p>
+  <a href="https://cnc-technik.de/kuka">▶ Open Editor</a>
+</div>
+</article>
+<footer>© CAD/CAM Systeme Datentechnik Reitz GmbH · <a href="https://cnc-technik.de">cnc-technik.de</a></footer>
+</body></html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SRC und DAT Dateien bearbeiten — KUKA Programmdateien erklärt</title>
+<meta name="description" content="SRC und DAT Dateien bearbeiten: Aufbau, Unterschiede und die besten Tools zum Bearbeiten von KUKA Roboterprogrammen.">
+<meta name="keywords" content="SRC DAT Dateien bearbeiten, KUKA SRC Datei, KUKA DAT Datei, KRL Programmdatei, KUKA Roboterprogramm bearbeiten">
+<link rel="stylesheet" href="article-base.css">
+</head>
+<body>
+<nav><span class="nav-logo">🤖 KRL Editor</span><a href="../">← Zurück</a><a href="https://cnc-technik.de/kuka" class="btn-cta">▶ Editor öffnen</a></nav>
+<article>
+<div class="meta">📅 2025 · CAD/CAM Systeme Datentechnik Reitz · 6 Min. Lesezeit</div>
+<h1>SRC und DAT Dateien <span>bearbeiten</span> — KUKA Programmdateien erklärt</h1>
+
+<p>Jedes KUKA-Roboterprogramm besteht aus zwei Dateien: der <strong>.src-Datei</strong> (Programm-Code) und der <strong>.dat-Datei</strong> (Datenliste). Wer diese Dateien professionell bearbeiten möchte, braucht die richtigen Werkzeuge.</p>
+
+<h2>Was ist eine .src Datei?</h2>
+<p>Die <strong>SRC-Datei</strong> (Source) enthält den eigentlichen KRL-Programmcode:</p>
+<pre>
+&amp;ACCESS RVP
+&amp;REL 1
+DEF MeinProgramm()
+
+   $TOOL = TOOL_DATA[1]
+   $BASE = BASE_DATA[1]
+   $VEL.CP = 0.3
+
+   PTP P1
+   LIN P2
+   LIN P3
+
+END
+</pre>
+<p>Sie definiert den Programmablauf: Bewegungsbefehle (<code>PTP</code>, <code>LIN</code>, <code>CIRC</code>), Ausgänge, Wartezeiten und Unterprogrammaufrufe.</p>
+
+<h2>Was ist eine .dat Datei?</h2>
+<p>Die <strong>DAT-Datei</strong> (Data) enthält alle Positionsdaten und globalen Variablen:</p>
+<pre>
+&amp;ACCESS RVP
+DEFDAT MeinProgramm
+
+   DECL E6POS P1={X 500.0,Y 0.0,Z 300.0,A 0.0,B 90.0,C 0.0}
+   DECL E6POS P2={X 600.0,Y 100.0,Z 300.0,A 0.0,B 90.0,C 0.0}
+   DECL E6POS P3={X 700.0,Y 0.0,Z 300.0,A 0.0,B 90.0,C 0.0}
+   DECL REAL rGeschwindigkeit
+
+ENDDAT
+</pre>
+
+<h2>SRC und DAT Dateien bearbeiten — die besten Methoden</h2>
+
+<h3>Methode 1: KRL Editor im Browser (empfohlen)</h3>
+<p>Der <a href="https://cnc-technik.de/kuka">kostenlose KRL Editor</a> öffnet .src und .dat Dateien direkt im Browser mit vollständigem Syntax-Highlighting und Code-Completion.</p>
+<ul>
+  <li>Beide Dateien gleichzeitig als Tabs geöffnet</li>
+  <li>Variablen aus der .dat werden in der .src als Completion angeboten</li>
+  <li>F12 springt von der Verwendung zur Deklaration</li>
+</ul>
+
+<h3>Methode 2: Notepad++ mit KRL-Plugin</h3>
+<p>Eine bekannte, aber nicht mehr gewartete Lösung. Syntax Highlighting vorhanden, aber keine Code-Completion oder Cross-File Navigation.</p>
+
+<h3>Methode 3: Visual Studio Code</h3>
+<p>Allgemeiner Editor ohne KRL-Unterstützung. Geeignet nur für einfache Textbearbeitung.</p>
+
+<h2>Dateiliste sortieren — automatisch</h2>
+<p>Der KRL Editor sortiert die DAT-Datei automatisch nach Typ (E6POS → REAL → INT → BOOL) und Name, mit natürlicher Zahlensortierung (P1, P2, P10 statt P1, P10, P2).</p>
+
+<div class="cta-box">
+  <h3>SRC und DAT Dateien jetzt bearbeiten</h3>
+  <p>Kostenlos im Browser — keine Installation nötig</p>
+  <a href="https://cnc-technik.de/kuka">▶ KRL Editor öffnen</a>
+</div>
+</article>
+<footer>© CAD/CAM Systeme Datentechnik Reitz GmbH · <a href="https://cnc-technik.de">cnc-technik.de</a></footer>
+</body></html>

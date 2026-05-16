@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KUKA Programmierung lernen — KRL Einsteiger-Guide 2025</title>
+<meta name="description" content="KUKA Programmierung lernen: Von DEF bis PTP, LIN und CIRC. Vollständiger Einsteiger-Guide für die KUKA Robot Language KRL mit Codebeispielen.">
+<meta name="keywords" content="KUKA Programmierung lernen, KRL Einsteiger, KUKA Robot Language Tutorial, KRL Tutorial Deutsch, KUKA DEF PTP LIN CIRC lernen">
+<link rel="stylesheet" href="article-base.css">
+</head>
+<body>
+<nav><span class="nav-logo">🤖 KRL Editor</span><a href="../">← Zurück</a><a href="https://cnc-technik.de/kuka" class="btn-cta">▶ Editor öffnen</a></nav>
+<article>
+<div class="meta">📅 2025 · CAD/CAM Systeme Datentechnik Reitz · 8 Min. Lesezeit</div>
+<h1>KUKA Programmierung <span>lernen</span> — KRL Einsteiger-Guide</h1>
+
+<p>Die <strong>KUKA Robot Language (KRL)</strong> ist die Programmiersprache aller KUKA-Industrieroboter. Dieser Guide erklärt die Grundlagen — von der ersten <code>DEF</code>-Zeile bis zu komplexen Bewegungssequenzen.</p>
+
+<h2>Programmaufbau: SRC und DAT</h2>
+<p>Jedes KRL-Programm besteht aus zwei Dateien:</p>
+<ul>
+  <li><strong>Meinprogramm.src</strong> — der Programmcode</li>
+  <li><strong>Meinprogramm.dat</strong> — die Datenliste (Positionen, Variablen)</li>
+</ul>
+
+<h3>Minimales Programm</h3>
+<pre>
+<span style="color:#888">&amp;ACCESS RVP</span>
+<span style="color:#888">&amp;REL 1</span>
+
+<span style="color:#569CD6">DEF</span> MeinErstesProgram()
+
+   <span style="color:#569CD6">PTP</span> {A1 0.0,A2 -90.0,A3 90.0,A4 0.0,A5 0.0,A6 0.0}
+
+<span style="color:#569CD6">END</span>
+</pre>
+
+<h2>Bewegungsbefehle</h2>
+
+<h3>PTP — Point-to-Point</h3>
+<p>Schnellste Bewegung von A nach B — der Roboter wählt den optimalen Weg selbst. Keine Garantie für einen geraden Pfad.</p>
+<pre>PTP P1            ; Achsinterpoliert
+PTP P1 C_PTP      ; Mit Überschleifen</pre>
+
+<h3>LIN — Lineare Bewegung</h3>
+<p>Der TCP (Werkzeugmittelpunkt) fährt exakt geradlinig. Für Schweißnähte, Kleberaupen oder genaue Positionierung.</p>
+<pre>LIN P2            ; Geradlinig
+LIN P2 C_DIS      ; Überschleifen mit Abstand</pre>
+
+<h3>CIRC — Kreisbewegung</h3>
+<p>Kreisbahn über einen Hilfspunkt:</p>
+<pre>CIRC P_Via, P_End         ; Kreisbogen
+SCIRC P_Via, P_End, CA 90 ; 90° Bogen</pre>
+
+<h2>Variablen deklarieren</h2>
+<pre>
+<span style="color:#569CD6">DECL</span> <span style="color:#4EC9B0">REAL</span>  rGeschwindigkeit = 0.5
+<span style="color:#569CD6">DECL</span> <span style="color:#4EC9B0">INT</span>   nZaehler         = 0
+<span style="color:#569CD6">DECL</span> <span style="color:#4EC9B0">BOOL</span>  bBereit          = FALSE
+<span style="color:#569CD6">DECL</span> <span style="color:#4EC9B0">E6POS</span> pHome
+</pre>
+
+<h2>Ablaufsteuerung</h2>
+
+<h3>IF-THEN-ELSE</h3>
+<pre>
+IF $IN[1] == TRUE THEN
+   PTP P_Gut
+ELSE
+   PTP P_Schlecht
+ENDIF
+</pre>
+
+<h3>FOR-Schleife</h3>
+<pre>
+FOR i = 1 TO 10
+   LIN P_Array[i]
+ENDFOR
+</pre>
+
+<h3>LOOP (Endlosschleife)</h3>
+<pre>
+LOOP
+   WAIT FOR $IN[1]    ; Auf Signal warten
+   PTP P1
+   PTP P2
+ENDLOOP
+</pre>
+
+<h2>E/A-Signale</h2>
+<pre>
+$OUT[1]  = TRUE       ; Digitalausgang setzen
+$OUT[1]  = FALSE      ; Digitalausgang rücksetzen
+WAIT FOR $IN[1]       ; Warten auf Digitaleingang
+$ANOUT[1] = 5.0       ; Analogausgang 5V
+</pre>
+
+<h2>Geschwindigkeit und Werkzeug</h2>
+<pre>
+$TOOL   = TOOL_DATA[1]  ; Werkzeug setzen
+$BASE   = BASE_DATA[1]  ; Koordinatensystem
+$VEL.CP = 0.3           ; 300 mm/s kartesisch
+$ACC.CP = 1.0           ; Beschleunigung
+</pre>
+
+<h2>Erste Schritte mit dem KRL Editor</h2>
+<p>Der beste Weg, KRL zu lernen: Direkt im <a href="https://cnc-technik.de/kuka">kostenlosen KRL Editor</a> ausprobieren. Einfach ein neues Standard-Programm erstellen — der Editor generiert eine fertige Vorlage mit allen notwendigen Grundelementen.</p>
+
+<div class="cta-box">
+  <h3>KRL programmieren lernen — jetzt starten</h3>
+  <p>Kostenloser Editor mit 20+ Beispielprogrammen zum Lernen</p>
+  <a href="https://cnc-technik.de/kuka">▶ Editor öffnen</a>
+</div>
+</article>
+<footer>© CAD/CAM Systeme Datentechnik Reitz GmbH · <a href="https://cnc-technik.de">cnc-technik.de</a></footer>
+</body></html>

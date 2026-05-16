@@ -1,0 +1,26 @@
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--orange:#F0A030;--bg:#0D0D0D;--bg2:#141414;--bg3:#1E1E1E;--border:#2A2A2A;--text:#D4D4D4;--text2:#888;--mono:'Courier New',monospace}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px}
+nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:52px;display:flex;align-items:center;gap:16px}
+.nav-logo{font-weight:700;color:var(--orange);font-size:15px}
+nav a{color:var(--text2);text-decoration:none;font-size:13px;margin-left:auto}
+nav a:hover{color:var(--text)}
+.btn-cta{background:var(--orange);color:#000;padding:6px 16px;border-radius:4px;font-weight:700;font-size:13px;text-decoration:none;margin-left:8px}
+article{max-width:760px;margin:0 auto;padding:48px 24px 80px}
+h1{font-size:clamp(26px,4vw,40px);line-height:1.2;margin-bottom:16px}
+h1 span{color:var(--orange)}
+.meta{color:var(--text2);font-size:13px;margin-bottom:40px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+h2{font-size:22px;margin:40px 0 14px;color:var(--text)}
+h3{font-size:17px;margin:28px 0 10px;color:var(--orange)}
+p{margin-bottom:16px;color:var(--text2)}
+p strong{color:var(--text)}
+ul,ol{margin:0 0 16px 24px;color:var(--text2)}
+li{margin-bottom:6px}
+code{font-family:var(--mono);background:var(--bg3);border:1px solid var(--border);border-radius:3px;padding:1px 6px;font-size:13px;color:#9CDCFE}
+pre{background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:20px;overflow-x:auto;margin:20px 0;font-family:var(--mono);font-size:12px;line-height:1.6;color:#D4D4D4}
+.cta-box{background:rgba(240,160,48,.08);border:1px solid rgba(240,160,48,.3);border-radius:8px;padding:24px;text-align:center;margin:40px 0}
+.cta-box h3{color:var(--orange);margin:0 0 8px}
+.cta-box p{margin:0 0 16px;color:var(--text2)}
+.cta-box a{background:var(--orange);color:#000;padding:10px 28px;border-radius:4px;font-weight:700;font-size:14px;text-decoration:none;display:inline-block}
+footer{border-top:1px solid var(--border);padding:24px;text-align:center;color:var(--text2);font-size:12px}
+footer a{color:var(--text2)}

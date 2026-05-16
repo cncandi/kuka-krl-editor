@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KUKA Robot Language Editor — Best Free KRL Editor 2025</title>
+<meta name="description" content="The best free KUKA Robot Language (KRL) editor with syntax highlighting, IntelliSense, Go to Definition and WorkVisual support. Browser-based, no installation.">
+<meta name="keywords" content="KUKA Robot Language Editor, KRL editor, KUKA KRL IDE, robot programming editor, KRC4 KRC5 editor, KUKA programming tool free">
+<link rel="stylesheet" href="article-base.css">
+</head>
+<body>
+<nav><span class="nav-logo">🤖 KRL Editor</span><a href="../">← Back</a><a href="https://cnc-technik.de/kuka" class="btn-cta">▶ Open Editor</a></nav>
+<article>
+<div class="meta">📅 2025 · CAD/CAM Systeme Datentechnik Reitz · 5 min read</div>
+<h1>KUKA <span>Robot Language Editor</span> — Complete Guide 2025</h1>
+
+<p>Programming KUKA industrial robots requires a solid understanding of the <strong>KUKA Robot Language (KRL)</strong> and the right tools to write, edit, and debug programs efficiently. This guide covers everything you need to know about KRL editors.</p>
+
+<h2>What is KRL — KUKA Robot Language?</h2>
+<p>KRL (KUKA Robot Language) is the proprietary programming language used by all KUKA industrial robots, including KRC4, KRC5, KUKA LBR iiwa, and KUKA KR AGILUS. It is a structured, Pascal-like language with robot-specific extensions for motion commands, I/O control, and interrupt handling.</p>
+
+<pre>
+DEF WeldingSequence()
+   $TOOL   = TOOL_DATA[2]     ; Welding torch
+   $VEL.CP = 0.12             ; 120 mm/s welding speed
+
+   PTP P_ApproachWeld         ; Approach position
+   $OUT[10] = TRUE            ; Shielding gas ON
+   WAIT SEC 0.3
+   $OUT[11] = TRUE            ; Arc ON
+   LIN P_WeldEnd              ; Weld seam
+   $OUT[11] = FALSE           ; Arc OFF
+   LIN P_ApproachWeld
+END
+</pre>
+
+<h2>Key Features of a Professional KRL Editor</h2>
+
+<h3>Syntax Highlighting</h3>
+<p>A good KRL editor distinguishes between motion commands (<code>PTP</code>, <code>LIN</code>, <code>CIRC</code>), system variables (<code>$TOOL</code>, <code>$VEL.CP</code>), data types (<code>REAL</code>, <code>INT</code>, <code>E6POS</code>), and control structures (<code>IF</code>, <code>FOR</code>, <code>LOOP</code>).</p>
+
+<h3>IntelliSense / Code Completion</h3>
+<p>Auto-complete should cover not just KRL keywords but also user-defined variables and functions from all project files.</p>
+
+<h3>Cross-File Navigation</h3>
+<p>Programs often span multiple .src and .dat files. Pressing F12 on a variable should jump to its declaration — even in another file.</p>
+
+<h3>WorkVisual Integration</h3>
+<p>WorkVisual (.wvs) project files contain multiple robot programs. An editor should open these archives directly.</p>
+
+<h2>Free KRL Editor — cnc-technik.de/kuka</h2>
+<p>The <a href="https://cnc-technik.de/kuka">free KRL Editor by Datentechnik Reitz</a> offers all professional features at no cost:</p>
+<ul>
+  <li>Full KRL syntax highlighting with FOLD block support</li>
+  <li>IntelliSense from all open files and the active environment</li>
+  <li>F12 Go to Definition — cross-file</li>
+  <li>WorkVisual .wvs and .wvps support</li>
+  <li>6 program type templates (Standard, Function, Submit, Interrupt, Cell, Global)</li>
+  <li>Community library with 20+ example programs</li>
+</ul>
+
+<div class="cta-box">
+  <h3>Try the Free KUKA KRL Editor</h3>
+  <p>Browser-based · No installation · No registration</p>
+  <a href="https://cnc-technik.de/kuka">▶ Open Editor Now</a>
+</div>
+</article>
+<footer>© CAD/CAM Systeme Datentechnik Reitz GmbH · <a href="https://cnc-technik.de">cnc-technik.de</a></footer>
+</body></html>

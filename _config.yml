@@ -1,0 +1,5 @@
+theme: null
+title: "KUKA KRL Editor — Free Robot Language Editor"
+description: "Free KUKA KRL Editor with Syntax Highlighting, Code Completion and WorkVisual Support"
+url: "https://cncandi.github.io"
+baseurl: "/kuka-krl-editor"
